@@ -13,3 +13,14 @@ def get_all_materials(url):
     assert response.status_code == httpx.codes.ok
     
     return response.content
+
+
+def get_material_by_guid(url, material_guid):
+    url += (url_leader + "/" + material_guid)
+    
+    response = requests.get(url)
+    assert response.status_code == httpx.codes.ok
+    
+    return response.content
+
+
